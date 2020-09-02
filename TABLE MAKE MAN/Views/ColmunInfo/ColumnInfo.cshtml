@@ -1,0 +1,73 @@
+﻿@model TABLE_MAKE_MAN.Models.ColumnInfoModel
+
+@{
+    ViewBag.Title = "テーブル作る君";
+}
+
+<h2>@ViewBag.Title </h2>
+
+@using (@Html.BeginForm())
+{
+<div>
+    <input type="submit" name="keisan" class="button" value="作成実行" />
+</div>
+        <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ColumnName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ChoiceType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MaxKeta)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DefaultValue)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Keyflg)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nullflg)
+                </th>
+                <th>
+                    <text>行追加</text>
+                </th>
+                <th>
+                    <text>行削除</text>
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.TextBoxFor(modelItem => modelItem.ColumnName)
+                </td>
+                <td>
+                    @Html.TextBoxFor(modelItem => modelItem.ChoiceType)
+                </td>
+                <td>
+                    @Html.TextBoxFor(modelItem => modelItem.MaxKeta)
+                </td>
+                <td>
+                    @Html.TextBoxFor(modelItem => modelItem.DefaultValue)
+                </td>
+                <td>
+                    @Html.CheckBoxFor(modelItem => modelItem.Keyflg)
+                </td>
+                <td>
+                    @Html.CheckBoxFor(modelItem => modelItem.Nullflg)
+                </td>
+                <td>
+                    <input type="submit" name="keisan" class="button" value="+" />
+                </td>
+                <td>
+                    <input type="submit" name="keisan" class="button" value="-" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+}
